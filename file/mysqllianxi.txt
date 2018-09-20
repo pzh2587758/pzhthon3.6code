@@ -1,0 +1,102 @@
+CREATE DATABASE pzh;
+SHOW DATABASES;
+USE pzh;
+CREATE TABLE pzh(
+  id int(10)PRIMARY KEY,
+  name char(20),
+  age int(10)
+);
+CREATE TABLE pzh1(
+  id int(10)PRIMARY KEY,
+  name CHAR(20),
+  phone int(12)
+);
+INSERT INTO pzh(id,name,age) VALUES
+  (01,'PZH1',21),(02,'PZH2',22),(03,'PZH3',23);
+SELECT * FROM pzh;
+INSERT INTO pzh1(id,name,phone) VALUES
+  (1,'PZH1',111111111),(2,'PZH2',112112112),(3,'PZH3',113113113);
+SELECT * FROM pzh1;
+INSERT INTO pzh(id,name,age) VALUES
+  (4,'PZH4',24),(5,'PZH5',25),(6,'PZH6',26),(7,'PZH7',27);
+SELECT * FROM pzh where age>20;
+SELECT * FROM pzh WHERE age<=25;
+SELECT * FROM pzh WHERE name='pzh3';
+SELECT * FROM pzh WHERE ID<3 OR ID>5;
+SELECT * FROM pzh WHERE id>3 and id<5;
+SELECT * FROM pzh WHERE id BETWEEN 3 AND 5;
+SELECT * FROM pzh WHERE id IN(2,3,4,5);
+SELECT * FROM pzh WHERE id NOT IN(2,3,4,5);
+SELECT * FROM pzh WHERE name LIKE('PZH_');
+SELECT * FROM pzh WHERE name LIKE('%3');
+SELECT id,name,phone FROM pzh1 ORDER BY phone DESC;
+SELECT * FROM pzh1 ORDER BY phone;
+SELECT * FROM pzh1 ORDER BY phone ASC;
+SELECT MAX(phone) AS max_phone,MIN(phone) FROM pzh1;
+SELECT COUNT(id) AS count_id FROM pzh;
+SELECT MAX(age) AS max_age,MIN(age) AS min_age FROM pzh;
+SELECT AVG(age) AS avg_age FROM pzh;
+SELECT SUM(age) AS sum_age FROM pzh;
+SELECT COUNT(id) AS count_id, SUM(age) AS sum_age,AVG(age) AS avg_age, MAX(age) AS max_age,MIN(age) AS min_age FROM pzh;
+SELECT * FROM pzh;
+RENAME TABLE pzh1 TO pzh2;
+SHOW TABLES;
+ALTER TABLE pzh2 RENAME pzh3;
+SHOW TABLES;
+ALTER TABLE pzh3 RENAME TO pzh4;
+SHOW TABLES;
+DROP TABLE pzh4;
+SHOW TABLES;
+SELECT * FROM pzh;
+ALTER TABLE pzh ADD COLUMN height INT(4) DEFAULT 170;
+SELECT * FROM pzh;
+ALTER TABLE pzh ADD add1 INT(4) DEFAULT 55;
+SELECT * FROM pzh;
+ALTER TABLE pzh ADD COLUMN sex ENUM('male','famale') DEFAULT 'famale' AFTER name;
+SELECT * FROM pzh;
+ALTER TABLE pzh ADD COLUMN do CHAR(5) DEFAULT 'FUGOD' FIRST;
+SELECT * FROM pzh;
+ALTER TABLE pzh DROP COLUMN do;
+SELECT * FROM pzh;
+ALTER TABLE pzh DROP add1;
+SELECT * FROM pzh;
+ALTER TABLE pzh CHANGE height heightnew INT(4) DEFAULT 160;
+SELECT * FROM pzh;
+ALTER TABLE pzh CHANGE heightnew heightnew INT(4) DEFAULT 170;
+SELECT * FROM pzh;
+SELECT * FROM pzh WHERE name='PZH3';
+UPDATE pzh SET name='PZH0',age=999 WHERE name='PZH3';
+SELECT * FROM pzh WHERE id=3;
+DELETE FROM pzh WHERE name='PZH1';
+SELECT * FROM pzh;
+DROP TABLE pzh;
+SHOW TABLES;
+SHOW DATABASES;
+DROP DATABASE pzh;
+SHOW DATABASES;
+
+
+CREATE DATABASE pzh;
+USE pzh;
+CREATE TABLE 3d(
+  id CHAR(10)PRIMARY KEY,
+  issue int(5)
+);
+SHOW TABLES;
+SELECT * FROM 3d;
+
+LOAD DATA LOCAL INFILE '/home/pzh2587758/python3.6pzh/3d.csv' INTO TABLE 3d
+FIELDS TERMINATED BY ','
+
+SELECT * FROM 3d;
+drop table 3d;
+
+
+CREATE TABLE 3dnum(
+  id int(10) AUTO_INCREMENT,
+  issub CHAR(10),
+  lottery_number int(5) NOT NULL,
+  CONSTRAINT id_issub PRIMARY KEY(id,issub)
+);
+INSERT INTO 3dnum(issub,lottery_number) SELECT id,issue FROM 3d;
+SELECT * FROM 3dnum;

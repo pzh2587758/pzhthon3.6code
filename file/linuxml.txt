@@ -1,0 +1,36 @@
+sudo apt update
+sudo apt upgrade
+sudo apt autoremove
+
+
+#!/bin/sh:这是开头要写的东西，有用。
+bash:linux默认使用的shell。
+sudo service mysql start:启动mysql服务器。
+vundle:vim插件管理
+:PluginInstall:启动下载插件。
+vim +PluginInstall +qall:启动下载插件
+BundleClean:移除所有插件。
+BundleUpdate:更新所有插件。
+BundleList:列出所有插件。
+byobu:终端分屏加强插件
+mldonkey:电骡工具
+sancho:mldonkey的一个插件
+amule:电骡
+
+touch:创建一个文件
+pwd:查看当前所在目录的路径
+echo:在终端输出
+man:linux的帮助
+whoami:查看用户名
+sudo adduser <name>:新建用户
+su -l <name>:切换用户
+ls /home:查看/home文件夹有几个
+groups <name>:查看用户组
+sudo usermod -G sudo <name>:添加用户到sudo用户组
+sudo deluser <name> --remove-home:删除用户并删除用户文件夹
+
+ifconfig -a 查看自己的ip地址
+nslookup <name> 查看对方ip
+ping <name> 可以查看到对方ip
+route -n 查看路由
+

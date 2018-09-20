@@ -1,0 +1,13 @@
+import sys
+from PyQt5.QtWidgets import QApplication,QWidget
+
+if __name == '__maion__':
+    app = QApplication(sys.argv)
+
+    w = QWidget()
+    w.resize(250,150)
+    w.mov(100,300)
+    w.setWindowTitle('Simple')
+    w.show()
+
+    sys.exit(app.exec_())
