@@ -7,8 +7,6 @@ class tikus():
     def __init__(self):
         # vim快捷键
         self.vimkey = {
-            
-            //旧
             '保存并退出': ':wq',
             '删除光标位置字符': 'x',
             '换上行插入': 'O',
