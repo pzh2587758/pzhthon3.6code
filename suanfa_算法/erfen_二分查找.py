@@ -35,3 +35,5 @@ def binary_search(list,item):
 my_list = range(0,999)
 a = binary_search(my_list,5)
 print(a)
+
+print(binary_search.__doc__)
