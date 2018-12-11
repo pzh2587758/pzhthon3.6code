@@ -1,0 +1,17 @@
+
+class zjjc(object):
+    """规范号码用"""
+    def __init__(self,zjh_set1,cph_set2): #set1:中奖号，set2：出票号
+        self.zjh = zjh_set1
+        self.cph = cph_set2
+
+    def paixu_NewNum(self,old_num):
+        """正向排序号码"""
+        zjh_7 = old_num[3:8]
+        zjh_7.sort()
+        zjh_2 = old_num[8:10]
+        zjh_2.sort()
+        zjh_7.extend(zjh_2)
+        zjh_new = old_num[0:2]
+        zjh_new.extend(zjh_7)
+        return zjh_new
