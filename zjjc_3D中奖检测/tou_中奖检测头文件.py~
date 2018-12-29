@@ -17,6 +17,8 @@ cscp_测试出票号 = ["出票号","2018-12-10",18145,17,4,12,31,33,2,11]
 #b.shuru()
 
 a = zjjc()
+print(cszj_测试中奖号)
 print(a.paixu_NewNum(cszj_测试中奖号))
-print(a.paixu_NewNum(cscp_测出试票号))
+print(a.paixu_NewNum(cscp_测试出票号))
+
 

@@ -32,5 +32,5 @@ class shuru_num(object):
             else:
                 print("数字不存在")
 
-#b = shuru_num()
-#b.shuru()
+b = shuru_num()
+b.shuru()
