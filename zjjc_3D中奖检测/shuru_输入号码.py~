@@ -22,7 +22,19 @@ class shuru_num(object):
                 x = tou1_1.split(",")
                 print(x)
                 a = zjjc()
-                print(a.paixu_NewNum(x))
+                #print(a.paixu_NewNum(x))
+                xieruyong_kaijianghaoma = a.paixu_NewNum(x)
+                print("准备写入：")
+                print(xieruyong_kaijianghaoma)
+                shi = input("是否写入上面的开奖号码,Y/N")
+                if shi == "Y":
+                    """将中奖号码写入到kaijiang.txt文件中"""
+                    filename = "kaijiang.txt"
+                    with open(filename,'a') as file_object:
+                        file_object.write(str(xieruyong_kaijianghaoma))
+                        file_object.write("\n")
+                else:
+                    pass
             elif tou_one == "2":
                 print("2")
             elif tou_one == "3":
