@@ -22,7 +22,21 @@ class ce4shi4():
         print('生成的字典为：')
         print(jie1shou4_num)
         print('\033[0m')
+        return jie1shou4_num
 
+    def jian3cha2_he2fa3(self,jian3cha2_jie1shou4_num):
+        """将合法获得的字典类型中的红球和蓝球的号码提取出来，成为一个数组"""
+        da4le4tou4_5_2 = [
+            jian3cha2_jie1shou4_num["h1"],
+            jian3cha2_jie1shou4_num["h2"],
+            jian3cha2_jie1shou4_num["h3"],
+            jian3cha2_jie1shou4_num["h4"],
+            jian3cha2_jie1shou4_num["h5"],
+            jian3cha2_jie1shou4_num["l1"],
+            jian3cha2_jie1shou4_num["l2"]
+        ]
+        return da4le4tou4_5_2
+        
     def ce4shi4_1(self):
         """测试常规字典储存期号，分类，红1等信息"""
         kai1jiang3_num = {"qi1hao4":"201903028","fen1lei4":"kai1jiang3hao4","h1":1,"h2":2,"h3":3,"h4":4,"l1":5,"l2":6}
@@ -36,5 +50,7 @@ class ce4shi4():
 
 a = ce4shi4()
 #a.ce4shi4_1()
-a.shu1ru4hao4ma3()
+b = a.shu1ru4hao4ma3()
+print('返回的字典类型为：',str(b))
+print(a.jian3cha2_he2fa3(b))
 
