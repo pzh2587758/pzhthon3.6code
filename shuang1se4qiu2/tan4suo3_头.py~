@@ -1,10 +1,21 @@
 from tan4suo3_号码储存方式 import ce4shi4 
+from biao1_ti_main import Biao1_Ti2
+from lu4_ru4 import Lu4_Ru4
 
-test_num = "2019,hehe,1,2,3,4,5,a,b"
+zhubiaoti = Biao1_Ti2()
+zhubiaoti.zhu3_jie4_mian4()
+
+lu4_ru4 = Lu4_Ru4()
+num = input("请输入选中的号码：")
+if num == "1":
+    test_dui4xiang4 = ce4shi4(lu4_ru4.xun2_wen4())
+else:
+    print("没有这个号码")
+
+#test_num = "2019,hehe,1,2,3,4,5,a,b"
 zhongjianghao_5 = ["1","2","3","4","8"]
 zhongjianghao_2 = ["a","c"]
 
-test_dui4xiang4 = ce4shi4(test_num)
 b = test_dui4xiang4.shu1ru4hao4ma3()
 print('\33[1;31;40m')
 print('返回的字典类型为：',str(b))

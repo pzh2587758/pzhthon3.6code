@@ -53,7 +53,6 @@ class ce4shi4():
         for i in p1_5:
             for j in p2_5:
                 if i == j:
-                    print("中")
                     a += 1
         return a
         
