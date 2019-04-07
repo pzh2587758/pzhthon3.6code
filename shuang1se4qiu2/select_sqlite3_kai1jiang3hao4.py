@@ -7,23 +7,28 @@ class select_kai1_jiang3_hao4():
         conn = sqlite3.connect('num_sql.db')
         c = conn.cursor()
         print("成功打开数据库")
+        print("读取数据库")
 
         cursor = c.execute("select * from kai1_jiang3_hao4;")
-        kaijianghao = {"ri4_qi":"","lei_xing":"","h1":"","h2":"","h3":"","h4":"","h5":"","l1":"","l2":""}
-        for row in cursor:
-            kaijianghao["ri4_qi"] = row[0]
-            kaijianghao["lei_xing"] = row[1]
-            kaijianghao["h1"] = row[2]
-            kaijianghao["h2"] = row[3]
-            kaijianghao["h3"] = row[4]
-            kaijianghao["h4"] = row[5]
-            kaijianghao["h5"] = row[6]
-            kaijianghao["l1"] = row[7]
-            kaijianghao["l2"] = row[8]
-            print(kaijianghao)
+        a = cursor.fetchall()
         print("关闭数据库")
         conn.close()
+        print("返回的开奖号码为：")
+        return a
+#       return ur
 
-a = select_kai1_jiang3_hao4()
-a.select_kai1_jiang3()
+if __name__ == "__main__":
+    a = select_kai1_jiang3_hao4()
+    b = a.select_kai1_jiang3()
+    print(b)
+    print(len(b))
+    lists = {}
+    for i in range(len(b)):
+        lists[i] = b[i]
+    print(lists)
+    print(lists[0][0])
+    print(lists[1][0])
+    print(lists[2][0])
+        
+    kaijianghao = {"ri4_qi":"","lei_xing":"","h1":"","h2":"","h3":"","h4":"","h5":"","l1":"","l2":""}
 
