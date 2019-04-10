@@ -6,6 +6,7 @@ if __name__ == '__main__':
 
     w = QWidget()
     w.resize(250,150)
+    w.mov(100,300)
     w.setWindowTitle('Simple')
     w.show()
 
