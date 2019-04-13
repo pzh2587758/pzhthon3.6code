@@ -7,18 +7,23 @@ from PyQt5.QtSql import QSqlDatabase,QSqlTableModel
 from PyQt5.QtCore import Qt
 
 def initializeModel(model):
-    model.setTable('kai1_jiang3_hao4')
+    model.setTable('c')
     model.setEditStrategy(QSqlTableModel.OnFieldChange)
     model.select()
-    model.setHeaderData(0,Qt.Horizontal,"ID")
-    model.setHeaderData(1,Qt.Horizontal,"LEI4_XING2 TEXT")
-    model.setHeaderData(2,Qt.Horizontal,"h1")
-    model.setHeaderData(3,Qt.Horizontal,"h2")
-    model.setHeaderData(4,Qt.Horizontal,"h3")
-    model.setHeaderData(5,Qt.Horizontal,"h4")
-    model.setHeaderData(6,Qt.Horizontal,"h5")
-    model.setHeaderData(7,Qt.Horizontal,"l1")
-    model.setHeaderData(8,Qt.Horizontal,"l2")
+    model.setHeaderData(0,Qt.Horizontal,"id")
+    
+#    model.setTable('kai1_jiang3_hao4')
+#    model.setEditStrategy(QSqlTableModel.OnFieldChange)
+#    model.select()
+#    model.setHeaderData(0,Qt.Horizontal,"ID")
+#    model.setHeaderData(1,Qt.Horizontal,"LEI4_XING2 TEXT")
+#    model.setHeaderData(2,Qt.Horizontal,"h1")
+#    model.setHeaderData(3,Qt.Horizontal,"h2")
+#    model.setHeaderData(4,Qt.Horizontal,"h3")
+#    model.setHeaderData(5,Qt.Horizontal,"h4")
+#    model.setHeaderData(6,Qt.Horizontal,"h5")
+#    model.setHeaderData(7,Qt.Horizontal,"l1")
+#    model.setHeaderData(8,Qt.Horizontal,"l2")
 
 def createView(title,model):
     view = QTableView()
@@ -29,6 +34,8 @@ def createView(title,model):
 def addrow():
     ret = model.insertRows(model.rowCount(),1)
     print('insertRows={}'.format(str(ret)))
+    if ret == False:
+        QMessageBox.about(dlg,"错误","数据超出范围")
 
 def findrow(i):
     delrow = i.row()
@@ -56,7 +63,7 @@ if __name__ == '__main__':
     addBtn.clicked.connect(addrow)
     layout.addWidget(addBtn)
 
-    delBtn = QPushButton("del")
+    delBtn = QPushButton("del") #这个删除有问题
     delBtn.clicked.connect(lambda:
             model.removeRow(view1.currentIndex().row()))
     layout.addWidget(delBtn)
