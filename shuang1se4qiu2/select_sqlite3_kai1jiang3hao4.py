@@ -9,26 +9,25 @@ class select_kai1_jiang3_hao4():
         print("成功打开数据库")
         print("读取数据库")
 
-        cursor = c.execute("select * from kai1_jiang3_hao4;")
+        cursor = c.execute("select * from d;")
         a = cursor.fetchall()
         print("关闭数据库")
         conn.close()
-        print("返回的开奖号码为：")
         return a
-#       return ur
 
 if __name__ == "__main__":
     a = select_kai1_jiang3_hao4()
     b = a.select_kai1_jiang3()
+    print("返回的开奖号码为：")
     print(b)
+    print("列表长度为：")
     print(len(b))
     lists = {}
     for i in range(len(b)):
         lists[i] = b[i]
-    print(lists)
-    print(lists[0][0])
-    print(lists[1][0])
-    print(lists[2][0])
+    for key,value in lists.items():
+        print(str(key) + ":" + str(value))
+        
         
     kaijianghao = {"ri4_qi":"","lei_xing":"","h1":"","h2":"","h3":"","h4":"","h5":"","l1":"","l2":""}
 
