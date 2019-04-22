@@ -16,9 +16,22 @@ INSERT INTO kai1_jiang3_hao4 VALUES('2018','kai1_jiang3_hao4','1','2','3','4','5
 INSERT INTO kai1_jiang3_hao4 VALUES('2017','kai1_jiang3_hao4','1','2','3','4','5','a','b');
 INSERT INTO kai1_jiang3_hao4 VALUES('2016','kai1_jiang3_hao4','3','4','5','6','7','f','g');
 INSERT INTO kai1_jiang3_hao4 VALUES('2015','hehe','2','5','8','12','21','i','m');
+INSERT INTO kai1_jiang3_hao4 VALUES('2020','pzh','3','8','9','11','23','d','w');
 CREATE TABLE c(
 id int check(id>5) check(id<9) check(id != 7)
 );
+INSERT INTO c VALUES(8);
+INSERT INTO c VALUES(8);
+INSERT INTO c VALUES(6);
+INSERT INTO c VALUES(6);
+INSERT INTO c VALUES(8);
+INSERT INTO c VALUES(8);
+INSERT INTO c VALUES(6);
+INSERT INTO c VALUES(6);
+INSERT INTO c VALUES(6);
+INSERT INTO c VALUES(6);
+INSERT INTO c VALUES(6);
+INSERT INTO c VALUES(6);
 CREATE TABLE d(
 qi1_hao4 CHARACTER(10) PRIMARY KEY NOT NULL,
 yong4_tu2 CHARACTER(15) NOT NULL,

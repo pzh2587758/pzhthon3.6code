@@ -19,7 +19,7 @@ lister = [
         
 for i in lister:
     try:
-        c.execute(i);
+        c.execute(i)
     except sqlite3.IntegrityError:
         print("{}插入的数据不在取值范围内".format(i))
     else:
